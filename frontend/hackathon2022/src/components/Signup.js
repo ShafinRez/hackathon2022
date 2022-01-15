@@ -3,6 +3,8 @@ import { React, useState } from "react";
 
 function Login() {
   const [state, setState] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
@@ -20,6 +22,20 @@ function Login() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+      <TextField
+          onChange={handleChange}
+          id="firstName"
+          variant="filled"
+          label="First Name"
+          required
+        />
+                <TextField
+          onChange={handleChange}
+          id="lastName"
+          variant="filled"
+          label="Last Name"
+          required
+        />
         <TextField
           onChange={handleChange}
           id="email"
@@ -37,9 +53,9 @@ function Login() {
         />
         <Button type="submit" variant="contained">Login</Button>
       </form>
-      
+      <h1>Already a user?</h1>
     </div>
   );
 }
 
-export default Signup;
+export default Login;
