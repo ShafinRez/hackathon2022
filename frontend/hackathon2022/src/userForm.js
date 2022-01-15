@@ -20,7 +20,7 @@ const defaultValues = {
   priority: "",
 };
 
-export default function userForm(){
+export default function UserForm(){
   const [formValues, setFormValues] = useState(defaultValues);
   const handleInputChange = (e) => { const { name, value } = e.target;
                                         setFormValues({
