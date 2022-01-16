@@ -18,13 +18,16 @@ function Login() {
     alert(state.email)
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    
+    <div class='container'>
+      <Paper elevation={0}>
+      <form onSubmit={handleSubmit} class='form'>
         <TextField
           onChange={handleChange}
           id="email"
           variant="filled"
           label="Email"
+          className='input'
           required
         />
         <TextField
@@ -33,10 +36,12 @@ function Login() {
           variant="filled"
           type="password"
           label="Password"
+          className='input'
           required
         />
-        <Button type="submit" variant="contained">Login</Button>
+        <Button type="submit" variant="contained" class='login'>Login</Button>
       </form>
+      </Paper>
       
     </div>
   );
