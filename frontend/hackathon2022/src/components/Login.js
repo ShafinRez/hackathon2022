@@ -24,40 +24,42 @@ function Login() {
     borderRadius: "10px",
   };
   return (
-    <Paper elevation={20} style={paperStyles}>
-      <Grid align="center">
-        <h1>Welcome Back!</h1>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            onChange={handleChange}
-            id="email"
-            variant="filled"
-            label="Email"
-            className="inputBox"
-            fullWidth
-            required
-          />
-          <TextField
-            onChange={handleChange}
-            id="password"
-            variant="filled"
-            type="password"
-            label="Password"
-            className="inputBox"
-            fullWidth
-            required
-          />
-          <div className="button-spacing">
-            <Button type="submit" variant="contained" fullWidth>
-              Login
-            </Button>
-          </div>
-          <Grid>
-            <Link href="/signup">Need to sign up?</Link>
-          </Grid>
-        </form>
-      </Grid>
-    </Paper>
+    <div className="background">
+      <Paper elevation={20} style={paperStyles}>
+        <Grid align="center">
+          <h1>Welcome Back!</h1>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              onChange={handleChange}
+              id="email"
+              variant="filled"
+              label="Email"
+              className="inputBox"
+              fullWidth
+              required
+            />
+            <TextField
+              onChange={handleChange}
+              id="password"
+              variant="filled"
+              type="password"
+              label="Password"
+              className="inputBox"
+              fullWidth
+              required
+            />
+            <div className="button-spacing">
+              <Button type="submit" variant="contained" fullWidth>
+                Login
+              </Button>
+            </div>
+            <Grid>
+              <Link href="/signup">Need to sign up?</Link>
+            </Grid>
+          </form>
+        </Grid>
+      </Paper>
+    </div>
   );
 }
 
