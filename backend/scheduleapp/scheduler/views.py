@@ -70,7 +70,7 @@ def event(request, event_id):
         event = service.events().insert(calendarId='primary', body=json.loads(request.body)).execute()
 
     if request.method == 'POST':
-        event = service.events().update(calendarId='primary', eventId=event_id, body=json.loads(request.body).execute()
+        event = service.events().update(calendarId='primary', eventId=event_id, body=json.loads(request.body)).execute()
 
     if request.method == 'DELETE':
         event = service.events().delete(calendarId='primary', eventId=event_id).execute()
