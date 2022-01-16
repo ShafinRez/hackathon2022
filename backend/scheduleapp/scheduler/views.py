@@ -63,6 +63,9 @@ def event(request, event_id):
             token.write(creds.to_json())
     
     event = None
+    if request.method == 'GET':
+        event =service.events().get(calendarId='primary', eventId=event_id).execute()
+
     if request.method == 'PUT':
         event = service.events().insert(calendarId='primary', body=json.loads(request.body)).execute()
 
