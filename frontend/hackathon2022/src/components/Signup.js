@@ -1,7 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import { React, useState } from "react";
 
-function Login() {
+function Signup() {
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -58,4 +58,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

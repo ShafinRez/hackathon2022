@@ -18,8 +18,8 @@ function Login() {
     alert(state.email)
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="login">
         <TextField
           onChange={handleChange}
           id="email"
@@ -33,6 +33,7 @@ function Login() {
           variant="filled"
           type="password"
           label="Password"
+          className = "inputBox"
           required
         />
         <Button type="submit" variant="contained">Login</Button>
@@ -42,4 +43,4 @@ function Login() {
   );
 }
 
-export default Signup;
+export default Login;
