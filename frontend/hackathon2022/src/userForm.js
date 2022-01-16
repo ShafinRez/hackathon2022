@@ -42,9 +42,8 @@ export default function UserForm(){
   };
   return (
     <form onSubmit={handleSubmit}>
-    <div class="rectangle">
+    <div >
       <Grid >
-        <h1> Please Input tasks </h1> 
         <Grid item class = "formtextName">
           <TextField 
             id="task-input"
