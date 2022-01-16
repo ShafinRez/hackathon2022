@@ -70,7 +70,9 @@ function Signup() {
               fullWidth
               required
             />
-            <Button type="submit" variant="contained" fullWidth >Sign Up!</Button>
+            <div class = 'sign-up'>
+              <Button type="submit" variant="contained" fullWidth >Sign Up!</Button>
+            </div>
           </form>
           </Grid>
           <Grid align='center'> <h1>Already a user?</h1></Grid>
