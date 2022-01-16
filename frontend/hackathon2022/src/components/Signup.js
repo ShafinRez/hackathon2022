@@ -31,65 +31,67 @@ function Signup() {
   };
 
   return (
-    <Grid>
-      <Paper elevation={20} style={paperStyle}>
-        <Grid align="center">
-          <h2>Fill in the information below</h2>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              onChange={handleChange}
-              id="firstName"
-              variant="filled"
-              label="First Name"
-              fullWidth
-              required
-            />
-            <TextField
-              onChange={handleChange}
-              id="lastName"
-              variant="filled"
-              label="Last Name"
-              fullWidth
-              required
-            />
-            <TextField
-              onChange={handleChange}
-              id="email"
-              variant="filled"
-              label="Email"
-              fullWidth
-              required
-            />
-            <TextField
-              onChange={handleChange}
-              id="password"
-              variant="filled"
-              type="password"
-              label="Password"
-              fullWidth
-              required
-            />
-            <TextField
-              onChange={handleChange}
-              id="password"
-              variant="filled"
-              type="password"
-              label="Confirm Password"
-              fullWidth
-              required
-            />
-            <div className="button-spacing">
-              <Button type="submit" variant="contained" fullWidth>
-                Sign Up!
-              </Button>
-            </div>
-          </form>
-        </Grid>
-        <Grid align="center">
-          <Link href="/login">Already a user?</Link>
-        </Grid>
-      </Paper>
-    </Grid>
+    <div className="background">
+      <Grid>
+        <Paper elevation={20} style={paperStyle}>
+          <Grid align="center">
+            <h2>Fill in the information below</h2>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                onChange={handleChange}
+                id="firstName"
+                variant="filled"
+                label="First Name"
+                fullWidth
+                required
+              />
+              <TextField
+                onChange={handleChange}
+                id="lastName"
+                variant="filled"
+                label="Last Name"
+                fullWidth
+                required
+              />
+              <TextField
+                onChange={handleChange}
+                id="email"
+                variant="filled"
+                label="Email"
+                fullWidth
+                required
+              />
+              <TextField
+                onChange={handleChange}
+                id="password"
+                variant="filled"
+                type="password"
+                label="Password"
+                fullWidth
+                required
+              />
+              <TextField
+                onChange={handleChange}
+                id="password"
+                variant="filled"
+                type="password"
+                label="Confirm Password"
+                fullWidth
+                required
+              />
+              <div className="button-spacing">
+                <Button type="submit" variant="contained" fullWidth>
+                  Sign Up!
+                </Button>
+              </div>
+            </form>
+          </Grid>
+          <Grid align="center">
+            <Link href="/login">Already a user?</Link>
+          </Grid>
+        </Paper>
+      </Grid>
+    </div>
   );
 }
 
