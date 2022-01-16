@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  width: auto;
+}
+
+.calendar {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  padding-right: 3em;
+  padding-top: 100px;
+}
