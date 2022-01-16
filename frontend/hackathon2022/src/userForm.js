@@ -12,6 +12,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
+import './App.css';
 
 
 const defaultValues = {
@@ -41,19 +42,21 @@ export default function UserForm(){
   };
   return (
     <form onSubmit={handleSubmit}>
-      <Grid container alignItems="center" justify="center" direction="column">
-        <Grid item>
-          <TextField
+    <div class="rectangle">
+      <Grid >
+        <h1> Please Input tasks </h1> 
+        <Grid item class = "formtextName">
+          <TextField 
             id="task-input"
             name="task"
-            label="Task Input"
+            label="Task Name"
             type="text"
             value={formValues.task}
             onChange={handleInputChange}
           />
         </Grid>
         <Grid item>
-          <TextField
+          <TextField 
             id="numberofHours-input"
             name="numberofHours"
             label="Number of hours required"
@@ -63,15 +66,15 @@ export default function UserForm(){
           />
         </Grid>
         <Grid item>
-          <FormControl>
-            <FormLabel>Priority</FormLabel>
+          <FormControl >
+            <FormLabel class = "formtextName">Is it a Priority? </FormLabel>
             <RadioGroup
               name="priority"
               value={formValues.priority}
               onChange={handleInputChange}
               row
             >
-              <FormControlLabel
+              <FormControlLabel 
                 key="yes"
                 value="yes"
                 control={<Radio size="small" />}
@@ -96,6 +99,7 @@ export default function UserForm(){
           Submit
         </Button>
       </Grid>
+      </div>
     </form>
   );
 };

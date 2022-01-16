@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.formtextName{
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    }
+
+.rectangle {
+      border: 2px solid #000000;
+      border-width: 5px;
+}
+
