@@ -17,7 +17,6 @@ SCOPES = 'https://www.googleapis.com/auth/calendar'
 
 # Get all calendar events
 def calendar(request):
-
     if request.method == 'GET':
         creds = None
         if os.path.exists('token.json'):
@@ -34,12 +33,10 @@ def calendar(request):
             with open('token.json', 'w') as token:
                 token.write(creds.to_json())
         try:
-            print (request)
             service = build('calendar', 'v3', credentials=creds)
 
             # Call the Calendar API
             now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
-            print('Getting the upcoming 10 events')
             events_result = service.events().list(calendarId='primary', timeMin=now, singleEvents=True, orderBy='startTime').execute()
             events = events_result.get('items', [])
             data = json.dumps(events)
@@ -48,5 +45,43 @@ def calendar(request):
 
 
         return JsonResponse(data, safe=False)
+
+def event(request, event_id):
+    creds = None
+    if os.path.exists('token.json'):
+            creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                        'key.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        # Save the credentials for the next run
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+    
+    event = None
+    if request.method == 'PUT':
+        event = service.events().insert(calendarId='primary', body=json.loads(request.body)).execute()
+
+    if request.method == 'POST':
+        event = service.events().update(calendarId='primary', eventId=event_id, body=json.loads(request.body).execute()
+
+    if request.method == 'DELETE':
+        event =service.events().delete(calendarId='primary', eventId=event_id).execute()
+
+    return JsonResponse(event, safe=False)
+
+
+
+
+
+
+
+
+
+    
 
 

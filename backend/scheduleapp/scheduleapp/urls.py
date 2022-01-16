@@ -27,5 +27,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view()),
     path('calendar/', views.calendar, name='calendar'),
-
+    path('calendar/<str:event_id>/', views.event, name='comments'),
 ]
