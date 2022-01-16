@@ -1,5 +1,5 @@
-import { TextField, Button, Grid, Paper, Avatar } from "@mui/material";
-import { borderRadius } from "@mui/system";
+import { TextField, Button, Grid, Paper, Link } from "@mui/material";
+
 import { React, useState } from "react";
 
 function Signup() {
@@ -9,6 +9,7 @@ function Signup() {
     email: "",
     password: "",
   });
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setState((prevState) => ({
@@ -17,18 +18,25 @@ function Signup() {
     }));
     // console.log(state);
   };
+
   const handleSubmit = (e) => {
-    alert(state.email)
-  }
-  const paperStyle = {padding:'30px 20px', width:400, margin:'20px auto', borderRadius:'10px'}
+    alert(state.email);
+  };
+
+  const paperStyle = {
+    padding: "30px 20px",
+    width: 400,
+    margin: "20px auto",
+    borderRadius: "10px",
+  };
+
   return (
     <Grid>
       <Paper elevation={20} style={paperStyle}>
-        <Grid align='center'>
+        <Grid align="center">
           <h2>Fill in the information below</h2>
-        
           <form onSubmit={handleSubmit}>
-          <TextField
+            <TextField
               onChange={handleChange}
               id="firstName"
               variant="filled"
@@ -36,7 +44,7 @@ function Signup() {
               fullWidth
               required
             />
-                    <TextField
+            <TextField
               onChange={handleChange}
               id="lastName"
               variant="filled"
@@ -70,14 +78,16 @@ function Signup() {
               fullWidth
               required
             />
-            <div class = 'sign-up'>
-              <Button type="submit" variant="contained" fullWidth >Sign Up!</Button>
+            <div className="button-spacing">
+              <Button type="submit" variant="contained" fullWidth>
+                Sign Up!
+              </Button>
             </div>
           </form>
-          </Grid>
-          <Grid align='center'> <h1>Already a user?</h1></Grid>
-         
-        
+        </Grid>
+        <Grid align="center">
+          <Link href="/login">Already a user?</Link>
+        </Grid>
       </Paper>
     </Grid>
   );

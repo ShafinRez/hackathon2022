@@ -1,4 +1,4 @@
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Paper, Grid, Link } from "@mui/material";
 import { React, useState } from "react";
 
 function Login() {
@@ -15,42 +15,49 @@ function Login() {
     // console.log(state);
   };
   const handleSubmit = (e) => {
-    alert(state.email)
-  }
+    alert(state.email);
+  };
+  const paperStyles = {
+    padding: "30px 20px",
+    width: 400,
+    margin: "20px auto",
+    borderRadius: "10px",
+  };
   return (
-    <div class="container">
-      <form onSubmit={handleSubmit} class="login">
-        <div class = 'input-elements'>
-          <label>Email:</label>
+    <Paper elevation={20} style={paperStyles}>
+      <Grid align="center">
+        <h1>Welcome Back!</h1>
+        <form onSubmit={handleSubmit}>
           <TextField
             onChange={handleChange}
             id="email"
             variant="filled"
             label="Email"
-            className='inputBox'
+            className="inputBox"
             fullWidth
             required
           />
+          <TextField
+            onChange={handleChange}
+            id="password"
+            variant="filled"
+            type="password"
+            label="Password"
+            className="inputBox"
+            fullWidth
+            required
+          />
+          <div className="button-spacing">
+            <Button type="submit" variant="contained" fullWidth>
+              Login
+            </Button>
           </div>
-          <div class = 'input-elements'>
-              <label>Password:</label>
-              <TextField
-                onChange={handleChange}
-                id="password"
-                variant="filled"
-                type="password"
-                label="Password"
-                className = "inputBox"
-                fullWidth
-                required
-              />
-            </div>
-        
-        <Button type="submit" variant="contained">Login</Button>
-      </form>
-
-      
-    </div>
+          <Grid>
+            <Link href="/signup">Need to sign up?</Link>
+          </Grid>
+        </form>
+      </Grid>
+    </Paper>
   );
 }
 
