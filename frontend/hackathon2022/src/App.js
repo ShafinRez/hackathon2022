@@ -35,21 +35,16 @@ function App() {
           <h2>Welcome to our</h2>
           <h1>Hackathon Project!</h1>
         </div>
-      <div className="bubbles">
-        <img src={bubble} alt="bubble"/>
-        <img src={bubble} alt="bubble"/>
-        <img src={bubble} alt="bubble"/>
-        <img src={bubble} alt="bubble"/>
-        <img src={bubble} alt="bubble"/>
-        <img src={bubble} alt="bubble"/>
-        <img src={bubble} alt="bubble"/>
+        <div className="bubbles">
+          <img src={bubble} alt="bubble" />
+          <img src={bubble} alt="bubble" />
+          <img src={bubble} alt="bubble" />
+          <img src={bubble} alt="bubble" />
+          <img src={bubble} alt="bubble" />
+          <img src={bubble} alt="bubble" />
+          <img src={bubble} alt="bubble" />
+        </div>
       </div>
-      </div>
-
-      <nav>
-        <Link to="/login"> Login </Link>
-        <Link to="/signup"> Signup </Link>
-      </nav>
     </div>
   );
 }
