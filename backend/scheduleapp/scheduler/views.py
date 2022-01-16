@@ -64,7 +64,7 @@ def event(request, event_id):
     
     event = None
     if request.method == 'GET':
-        event =service.events().get(calendarId='primary', eventId=event_id).execute()
+        event = service.events().get(calendarId='primary', eventId=event_id).execute()
 
     if request.method == 'PUT':
         event = service.events().insert(calendarId='primary', body=json.loads(request.body)).execute()
@@ -73,7 +73,7 @@ def event(request, event_id):
         event = service.events().update(calendarId='primary', eventId=event_id, body=json.loads(request.body).execute()
 
     if request.method == 'DELETE':
-        event =service.events().delete(calendarId='primary', eventId=event_id).execute()
+        event = service.events().delete(calendarId='primary', eventId=event_id).execute()
 
     return JsonResponse(event, safe=False)
 
