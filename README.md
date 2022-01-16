@@ -8,10 +8,25 @@ Make sure you have Node.js installed.
 
 Clone the project at `https://github.com/ShafinRez/hackathon2022`
 
-Install all dependencies using `npm i`
+Load the virtual environment.
 
-Run `npm start` in the terminal for the frontend and the backend.
+Install the the back-end dependencies using `python -m install -r requirements.txt`.
+
+Run server using `python manage.py runserver`.
 
 Our project should now be running locally!
 
 ## Our Team
+<ul>
+<li>Byron Tung</li>
+
+<li>Shafin Rezwan</li>
+
+<li>Mahima Dhawan</li>
+
+<li>Anthony Ma</li>
+
+<li>Penelope Chen</li>
+
+  <li>Nasiv Adhikari</li>
+</ul>
